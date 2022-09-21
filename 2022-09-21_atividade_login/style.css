@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(40, 42, 54);
+	color: rgb(248, 248, 242);
+    font-family: 'Open Sans', sans-serif;
+}
+.margin_auto {
+    margin: auto;
+}
+h1 {
+	color: rgb(255, 184, 108);
+}
+input, textarea {
+    background-color: rgb(68, 71, 90);
+	color: rgb(248, 248, 242);
+}
+.areatitulo {
+    position: relative;
+    text-align: center;
+}
+img {
+    max-height: 300px;
+}
+.titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(40, 42, 54, 0.5);
+    border-radius: 8px;
+    border: solid 1px white;
+    margin: auto;
+}
+section {
+    width: 50%;
+    min-width: 500px;
+    height: fit-content;
+    margin: auto;
+}
+.conteudo {
+    text-align: center;
+}
+.autor {
+    text-align: right;
+}

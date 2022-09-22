@@ -16,7 +16,7 @@
         $senha = $_POST['senha'];
         if ($user == '' || $senha == '') {
             echo "<p>Preencha todos os campos!</p>";
-        } elseif ($user != 'dibilowas' && $senha != 'awibilay') {
+        } elseif ($user != 'dibilowas' || $senha != 'awibilay') {
             echo "<p>Usuário ou senha estão incorretos!</p>";
         } else {
     ?>

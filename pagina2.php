@@ -25,8 +25,8 @@
         <h1 class="titulo"> <?= $titulo ?> </h1>
     </div>
     <section>
-        <p class="conteudo"> <?= $conteudo ?> </p>
-        <p class="autor"> <?= $autor ?> </p>
+        <p> <?= $conteudo ?> </p>
+        <p class="direita"> <?= $autor ?> </p>
     </section>
 
     <?php }} ?>

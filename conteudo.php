@@ -9,8 +9,9 @@
 </head>
 <body class="margin_auto">
     <?php
-    if ($_POST == []) {
-        echo "<p>Faça login para poder acessar essa página.</p>";
+    session_start();
+    if (isset($_SESSION['user']) == false || $_POST == []){
+        echo "<p>Só é possível acessar essa página realizando um login e inserindo os dados na página anterior</p>";
     } else {
         $titulo = $_POST['titulo'];
         $conteudo = $_POST['conteudo'];
@@ -18,17 +19,9 @@
         if ($titulo == '' || $conteudo == '' || $autor == '') {
             echo "<p>Preencha todos os campos!</p>";
         } else {
+            require_once "conteudo.html";
+        }
+    }
     ?>
-
-    <div class="areatitulo">
-        <img src="img/chainsawbanner.jpg" width="100%">
-        <h1 class="titulo"> <?= $titulo ?> </h1>
-    </div>
-    <section>
-        <p> <?= $conteudo ?> </p>
-        <p class="direita"> <?= $autor ?> </p>
-    </section>
-
-    <?php }} ?>
 </body>
 </html>

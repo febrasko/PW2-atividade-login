@@ -9,9 +9,10 @@
 </head>
 <body>
     <?php 
-        if ($_POST == []) {
+        session_start();
+        if (isset($_SESSION['user']) == false && $_POST == []){
                 echo "<p>Só é possível acessar essa página realizando um login</p>";
-        } else {
+        } elseif (isset($_SESSION['user']) == false) {
             $user = $_POST['user'];
             $senha = $_POST['senha'];
             if ($user == '' || $senha == '') {
@@ -19,19 +20,12 @@
             } elseif ($user != 'etec' || $senha != 'etec') {
                 echo "<p>Usuário ou senha estão incorretos!</p>";
             } else {
-    ?>
-    <section>
-        <h1>Escreva as informações</h1>
-        <form action="pagina2.php" method="post">
-            <p>Titulo: <input type="text" name="titulo"></p>
-            <p>Conteúdo: </p>
-            <textarea name="conteudo" id="conteudo" cols="60" rows="20"></textarea>
-            <p>Autor: <input type="text" name="autor"></p>
-            <p><input type="submit" value="Enviar"></p>
-        </form>
-    </section>
-    <?php
-        }}
+                $_SESSION['user'] = $user;
+                require_once "inserir-dados.html"; 
+            }
+        } else {
+            require_once "inserir-dados.html"; 
+        }
     ?>
 </body>
 </html>

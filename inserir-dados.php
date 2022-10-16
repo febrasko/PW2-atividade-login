@@ -11,7 +11,7 @@
     <?php 
         session_start();
         if (isset($_SESSION['user']) == false && $_POST == []){
-                echo "<p>Só é possível acessar essa página realizando um login</p>";
+            echo "<p>Só é possível acessar essa página realizando um login</p>";
         } elseif (isset($_SESSION['user']) == false) {
             $user = $_POST['user'];
             $senha = $_POST['senha'];
